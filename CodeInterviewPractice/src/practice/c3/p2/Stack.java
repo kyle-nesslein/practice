@@ -21,6 +21,14 @@ public class Stack {
 		}
 	}
 	
+	public boolean isEmpty() {
+		if (top == null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public Node<Integer> pop() {
 		Node<Integer> node = top;
 		top = top.next;
