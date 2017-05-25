@@ -1,5 +1,7 @@
 package practice.fizzbuzz;
 
+import java.util.Optional;
+
 /*
  * Write a program that prints the numbers from 1 to 100. 
  * But for multiples of three print "Fizz" instead of the 
@@ -9,6 +11,13 @@ package practice.fizzbuzz;
 public class Fizzbuzz {
 	public static void main(String args[]) {
 		fizzbuzz2();
+	}
+	public static void fizzbuzz3(int number) {
+		String result = Optional.of(number)
+				.map(n -> (n % 3 == 0 ? "Fizz" : "") + (n % 5 == 0 ? "Buzz" : ""))
+				.get();
+		return result.isEmpty() ? Integer.toString(number) : result;
+		
 	}
 	
 	public static void fizzbuzz2() {
