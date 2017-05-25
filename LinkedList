@@ -1,0 +1,38 @@
+public class LinkedList<T> {
+	Node<T> head;
+	public static void main(String args[]) {
+		LinkedList<Integer> ll = new LinkedList<Integer>();
+		ll.append(1);
+		ll.append(4);
+		ll.append(8);
+		ll.append(10);
+
+		System.out.println(ll.find(8));
+		System.out.println(ll.elementAt(1));
+	}
+
+	public LinkedList() {}
+
+	public void add(T data) {
+		Node<T> n = head;
+		if (n==null) {
+			head = new Node<T>(data);
+		} else {
+			Node<T> next = head;
+			while (next.next!=null) {
+				next = next.next;
+			}
+			next.next = new Node<T>(data);
+		}
+	}
+
+
+	private class Node<T> {
+		T data;
+		Node<T> next:
+
+		public Node(T t) {
+			data = t;
+		}
+	}
+}
